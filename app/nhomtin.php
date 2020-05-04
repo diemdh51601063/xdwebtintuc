@@ -13,6 +13,6 @@ class nhomtin extends Model
 
    public function loaitin()
    {
-   	return $this->hasMany('App\loaitin','id_nhomtin');
+   	return $this->hasMany('App\loaitin','id_nhomtin','id');
    }
 }
