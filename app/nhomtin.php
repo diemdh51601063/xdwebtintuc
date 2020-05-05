@@ -13,6 +13,11 @@ class nhomtin extends Model
 
    public function loaitin()
    {
-   	return $this->hasMany('App\loaitin','id_nhomtin','id');
+   	return $this->hasMany('App\loaitin','id_nhomtin');
    }
+
+     public function tin()
+    {
+        return $this->hasManyThrough('App\tin','App\loaitin','id_nhomtin','id_loaitin');
+    }
 }
