@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,8 +17,14 @@ Route::get('/', function () {
 
 Route::get('a.html','nhomtinController@demo1');
 
+*/
 
-Route::group(['prefix'=>'admin'],function(){
+
+Route::get('admin/login.html','UserController@getlogin')->name('login');
+Route::post('admin/login.html','UserController@postlogin');
+Route::get('admin/logout.html','UserController@getlogout')->middleware('login');
+
+Route::group(['prefix'=>'admin','middleware'=>'login'],function(){
 
   Route::group(['prefix'=>'nhomtin'],function(){
 
@@ -72,13 +78,14 @@ Route::group(['prefix'=>'admin'],function(){
 
    });
 
-    Route::get('dashboard.html','dashboardController@getdashboard');
-
+  
   	  Route::group(['prefix'=>'ajax'],function(){
       Route::get('loaitin/{id_nhomtin}','ajaxController@getloaitin');
     });
 
-/* Route::fallback(function () {
+
+
+ Route::fallback(function () {
    return redirect()->route('login');
-});*/
+});
 });
