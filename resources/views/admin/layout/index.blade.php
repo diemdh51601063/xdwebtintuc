@@ -100,7 +100,7 @@
     <li class="submenu"> <a href="#"><i class="icon icon-list"></i> <span>Bình luận</span> <span class="label label-important">3</span></a>
       <ul>
         <li><a href="form-common.html">Basic Form</a></li>
-        <li><a href="form-validation.html">Form with Validation</a></li>
+        <li><a href="form-validation.html">A</a></li>
        
       </ul>
     </li>
